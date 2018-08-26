@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 const Promblematic = () => {
-  throw new Error("버그가 나타났다!");
+  throw new Error('버그가 나타났다!');
   return <div />;
 };
 
@@ -15,24 +15,24 @@ class Counter extends Component {
   //1. 생성자
   constructor(props) {
     super(props);
-    console.log("constructor");
+    console.log('constructor');
   }
 
   //2. 화면에 나가기 직전(현재는 사용되지 않음.)
   componentWillMount() {
-    console.log("componentWillMount (deprecated)");
+    console.log('componentWillMount (deprecated)');
   }
 
   //3. 컴포넌트가 화면에 보이는 시점.
   componentDidMount() {
-    console.log("componentDidMount");
+    console.log('componentDidMount');
   }
 
   /////////////////////////////////컴포넌트 업데이트/////////////////////////////////////
   //1. 컴포넌트를 업데이트 할 지 여부를 정할 수 있음.
   shouldComponentUpdate(nextProps, nextState) {
     // 5 의 배수라면 리렌더링 하지 않음
-    console.log("shouldComponentUpdate");
+    console.log('shouldComponentUpdate');
     if (nextState.number % 5 === 0) return false;
     return true;
   }
@@ -40,12 +40,12 @@ class Counter extends Component {
   //2. 렌더 호출 직전
   //1번 shouldComponentUpdate가 true를 리턴하는 경우에만 호출된다.
   componentWillUpdate(nextProps, nextState) {
-    console.log("componentWillUpdate");
+    console.log('componentWillUpdate');
   }
 
   //3. render 이후
   componentDidUpdate(prevProps, prevState) {
-    console.log("componentDidUpdate");
+    console.log('componentDidUpdate');
   }
 
   //4. 예외처리
@@ -69,7 +69,7 @@ class Counter extends Component {
   };
 
   render() {
-    console.log("render");
+    console.log('render');
     if (this.state.error) return <h1>에러발생!</h1>;
     else {
       return (

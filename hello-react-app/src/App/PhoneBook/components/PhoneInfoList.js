@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import PhoneInfo from "./PhoneInfo";
+import React, { Component } from 'react';
+import PhoneInfo from './PhoneInfo';
 
 class PhoneInfoList extends Component {
   static defaultProps = {
     data: [],
-    onRemove: () => console.warn("onRemove not defined"),
-    onUpdate: () => console.warn("onUpdate not defined")
+    onRemove: () => console.warn('onRemove not defined'),
+    onUpdate: () => console.warn('onUpdate not defined')
   };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -18,7 +18,7 @@ class PhoneInfoList extends Component {
   //rerendering을 줄이기 위해서 데이터가 달라질 때에만 virtual Dom에 rendering 하도록 한다.
 
   render() {
-    console.log("render PhoneInfoList");
+    console.log('render PhoneInfoList');
     const { data, onRemove, onUpdate } = this.props;
     const list = data.map(info => (
       <PhoneInfo
